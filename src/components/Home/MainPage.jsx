@@ -2,11 +2,11 @@ import React from "react";
 import container from "./MainPage.module.css";
 
 const styles = {
-  mainDiv: "flex flex-col py-[100px] sm:max-w-[500px] lg:max-w-[800px] ",
+  mainDiv: "flex flex-col py-[100px] sm:max-w-[500px] lg:max-w-[800px]",
   mainText: "text-white font-bold leading-10 text-[36px] md:text-6xl",
-  mainParagraph: "pt-7 pb-20 md:text-2xl",
+  mainParagraph: "pt-7 pb-10 md:text-2xl ease-in-out",
   mainBtn:
-    "text-white font-semibold bg-[#FF8C38] align-center justify-center rounded-md py-3  md:text-3xl cursor-pointer hover:bg-[#E17654] hover:text-slate-100",
+    "text-white font-semibold bg-[#FF8C38] align-center justify-center rounded-md py-3  md:text-3xl cursor-pointer hover:bg-[#E17654] hover:text-slate-100 transition ease-out duration-300 hover:p-4",
 };
 
 const MainPage = () => {
