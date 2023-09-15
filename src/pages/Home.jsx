@@ -1,14 +1,6 @@
 import React from "react";
-import { Header, MainPage, Footer } from "../components";
+import { MainPage } from "../components";
 
-const Home = () => {
-	return (
-		<>
-			<Header />
-			<MainPage />
-			<Footer />
-		</>
-	);
-};
+const Home = () => <MainPage />;
 
 export default Home;

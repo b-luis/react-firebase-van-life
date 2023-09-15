@@ -1,13 +1,20 @@
 import React from "react";
-import { Home } from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./components";
+import { Home, About, Van } from "./pages";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
-	return (
-		<Routes>
-			<Route path="/" element={<Home />} />
-		</Routes>
-	);
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/vans" element={<Van />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 };
 
 export default App;
