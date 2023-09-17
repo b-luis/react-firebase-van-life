@@ -1,7 +1,7 @@
 import React from "react";
 import image from "./About.module.css";
 import person from "../../assets/images/background/vanlife.jpg";
-import { Footer } from "../../components";
+import { NavLink } from "react-router-dom";
 
 const styles = {
   about: "flex flex-col justify-center items-center ",
@@ -13,9 +13,9 @@ const styles = {
   exploreDiv: "bg-[#FFCC8D] py-10 px-5 mt-10 lg:px-6 rounded-sm",
   exploreText: "font-bold text-2xl md:text-3xl xl:text-4xl",
   exploreBtn:
-    "bg-black text-white px-4 py-2 rounded-lg mt-5 md:text-xl xl:text-2xl xl:mt-8 hover:bg-slate-700",
+    "bg-black text-white px-4 py-2 rounded-lg md:text-xl xl:text-2xl xl:mt-8 hover:bg-slate-700",
 };
-
+ 
 const AboutPage = () => {
   return (
     <section className={styles.about}>
@@ -40,7 +40,11 @@ const AboutPage = () => {
         <div className={styles.exploreDiv}>
           <h3 className={styles.exploreText}>Your destination is waiting.</h3>
           <h3 className={styles.exploreText}>Your van is ready.</h3>
-          <button className={styles.exploreBtn}>Explore our vans</button>
+          <div className="py-5">
+            <NavLink to="/vans" className={styles.exploreBtn}>
+              Explore our vans
+            </NavLink>
+          </div>
         </div>
       </div>
     </section>

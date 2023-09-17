@@ -7,6 +7,9 @@ export default {
         default: "#4D4D4D",
         active: "#161616",
       },
+      screens: {
+        xs: "500px",
+      },
     },
   },
   plugins: [],

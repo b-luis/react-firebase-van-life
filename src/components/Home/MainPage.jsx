@@ -1,12 +1,13 @@
 import React from "react";
 import container from "./MainPage.module.css";
+import { NavLink } from "react-router-dom";
 
 const styles = {
   mainDiv: "flex flex-col py-[100px] sm:max-w-[500px] lg:max-w-[800px]",
   mainText: "text-white font-bold leading-10 text-[36px] md:text-6xl",
   mainParagraph: "pt-7 pb-10 md:text-2xl ease-in-out",
   mainBtn:
-    "text-white font-semibold bg-[#FF8C38] align-center justify-center rounded-md py-3  md:text-3xl cursor-pointer hover:bg-[#E17654] hover:text-slate-100 transition ease-out duration-300 hover:p-4",
+    "text-white font-semibold bg-[#FF8C38] text-center rounded-md py-3  md:text-3xl cursor-pointer hover:bg-[#E17654] hover:text-slate-100 transition ease-out duration-300 hover:p-4",
 };
 
 const MainPage = () => {
@@ -20,7 +21,9 @@ const MainPage = () => {
           Add adventure to your life by joining the #vanlife movement. Rent the
           perfect van to make your perfect road trip.
         </p>
-        <button className={styles.mainBtn}>Find your van</button>
+        <NavLink to="/vans" className={styles.mainBtn}>
+          Find your van
+        </NavLink>
       </div>
     </main>
   );

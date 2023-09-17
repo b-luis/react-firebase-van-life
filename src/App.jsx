@@ -2,6 +2,7 @@ import React from "react";
 import { Header, Footer } from "./components";
 import { Home, About, Van } from "./pages";
 import { Routes, Route } from "react-router-dom";
+import "./miragejs/server";
 
 const App = () => {
   return (

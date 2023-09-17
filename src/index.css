@@ -13,6 +13,66 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+body {
+  background: #fff7ed;
+}
+
 /* body * {
-	outline: 1px solid magenta;
+  outline: 1px solid magenta;
 } */
+
+.vantype {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffead0;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vantype:hover {
+  color: #ffead0;
+}
+
+.vantype:focus {
+  outline: none;
+}
+
+.vantype.selected {
+  color: #ffead0;
+}
+
+.vantype.simple:hover,
+.vantype.simple.selected {
+  background-color: #e17654;
+}
+
+.vantype.rugged:hover,
+.vantype.rugged.selected {
+  background-color: #115e59;
+}
+
+.vantype.luxury:hover,
+.vantype.luxury.selected {
+  background-color: #161616;
+}
+
+.vantype.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+i[class*="van-type-"] {
+  padding: 7px 14px;
+}
