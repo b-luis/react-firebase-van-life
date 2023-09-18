@@ -1,5 +1,4 @@
-import React from "react";
-import { Footer, Layout } from "./components";
+import { Layout, HostLayout } from "./components";
 import {
   Home,
   About,
@@ -9,7 +8,6 @@ import {
   Dashboard,
   Income,
   Reviews,
-  Layout,
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import "./miragejs/server";
@@ -23,13 +21,14 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Van />} />
           <Route path="/vans/:id" element={<VanDetail />} />
-          <Route path="/host" element={<Dashboard />} />
-          <Route path="/host/income" element={<Income />} />
-          <Route path="/host/reviews" element={<Reviews />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/host" element={<HostLayout />}>
+            <Route path="/host" element={<Dashboard />} />
+            <Route path="/host/income" element={<Income />} />
+            <Route path="/host/reviews" element={<Reviews />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Route>
       </Routes>
-      <Footer />
     </>
   );
 };

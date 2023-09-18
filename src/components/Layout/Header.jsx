@@ -16,13 +16,16 @@ const Header = () => {
         #VANLIFE
       </NavLink>
       <nav className={style.navbar}>
+        <NavLink to="/host" className={style.navLinks}>
+          Host
+        </NavLink>
         <NavLink to="/about" className={style.navLinks}>
           About
         </NavLink>
         <NavLink to="/vans" className={style.navLinks}>
           Vans
         </NavLink>
-      </nav> 
+      </nav>
     </header>
   );
 };
