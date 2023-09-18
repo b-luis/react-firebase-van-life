@@ -1,18 +1,14 @@
 import React from "react";
-import VanType from "../Filter/VanType";
-import VanItem from "../VanItem/VanItem";
+import VanItem from "../../components/";
 import { useEffect, useState, useRef } from "react";
 
 const styles = {
   vanSection: "px-6 py-[45px]",
   vanTitle: "font-semibold text-xl lg:text-2xl",
   vanDiv: "flex flex-row flex-wrap justify-between",
-  detailsDiv: "",
-  vanName: "",
-  vanPrice: "",
 };
 
-const VanPage = () => {
+const Van = () => {
   const [vanData, setVanData] = useState([]);
   const firstRender = useRef(true);
 
@@ -38,4 +34,4 @@ const VanPage = () => {
   );
 };
 
-export default VanPage;
+export default Van;

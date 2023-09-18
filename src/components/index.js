@@ -1,9 +1,4 @@
-export { default as Layout } from "./Layout";
-export { default as Header } from "./Header";
-export { default as Footer } from "./Footer";
-export { default as MainPage } from "./Home/MainPage";
-export { default as AboutPage } from "./About/AboutPage";
-export { default as VanPage } from "./Van/VanPage/VanPage";
-export { default as VanItem } from "./Van/VanItem/VanItem";
-export { default as VanButton } from "./Van/Button/VanButton";
-export { default as VanType } from "./Van/Filter/VanType";
+export { default as Layout } from "./Layout/Layout";
+export { default as Header } from "./Layout/Header";
+export { default as Footer } from "./Layout/Footer";
+export { default as VanItem } from "./Vans/VanItem";

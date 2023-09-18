@@ -1,5 +1,5 @@
 import React from "react";
-import container from "./MainPage.module.css";
+import container from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 
 const styles = {
@@ -10,7 +10,7 @@ const styles = {
     "text-white font-semibold bg-[#FF8C38] text-center rounded-md py-3  md:text-3xl cursor-pointer hover:bg-[#E17654] hover:text-slate-100 transition ease-out duration-300 hover:p-4",
 };
 
-const MainPage = () => {
+const Home = () => {
   return (
     <main className={container.layout}>
       <div className={styles.mainDiv}>
@@ -29,4 +29,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Home;

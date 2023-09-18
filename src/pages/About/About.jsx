@@ -16,7 +16,7 @@ const styles = {
     "bg-black text-white px-4 py-2 rounded-lg md:text-xl xl:text-2xl xl:mt-8 hover:bg-slate-700",
 };
  
-const AboutPage = () => {
+const About = () => {
   return (
     <section className={styles.about}>
       <div className={styles.imgDiv}>
@@ -51,4 +51,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default About;
