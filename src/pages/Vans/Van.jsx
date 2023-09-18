@@ -1,5 +1,5 @@
 import React from "react";
-import VanItem from "../../components/";
+import VanItem from "../../components/Vans/VanItem";
 import { useEffect, useState, useRef } from "react";
 
 const styles = {

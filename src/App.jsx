@@ -1,6 +1,16 @@
 import React from "react";
-import { Header, Footer, Layout } from "./components";
-import { Home, About, Van, VanDetail, NotFound } from "./pages";
+import { Footer, Layout } from "./components";
+import {
+  Home,
+  About,
+  Van,
+  VanDetail,
+  NotFound,
+  Dashboard,
+  Income,
+  Reviews,
+  Layout,
+} from "./pages";
 import { Routes, Route } from "react-router-dom";
 import "./miragejs/server";
 
@@ -13,6 +23,9 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Van />} />
           <Route path="/vans/:id" element={<VanDetail />} />
+          <Route path="/host" element={<Dashboard />} />
+          <Route path="/host/income" element={<Income />} />
+          <Route path="/host/reviews" element={<Reviews />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
