@@ -12,9 +12,9 @@ const style = {
 const Header = () => {
   return (
     <header className={style.header}>
-      <h1 className={style.headerLogo}>
-        <NavLink to="/">#VANLIFE</NavLink>
-      </h1>
+      <NavLink to="/" className={style.headerLogo}>
+        #VANLIFE
+      </NavLink>
       <nav className={style.navbar}>
         <NavLink to="/about" className={style.navLinks}>
           About
