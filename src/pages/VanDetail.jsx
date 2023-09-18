@@ -3,7 +3,7 @@ import { useParams, NavLink } from "react-router-dom";
 
 const styles = {
   vanDetailContainer: "px-6 py-[45px] flex flex-col ",
-  vanDiv: "mt-6 md:max-w-[800px] md:mx-auto",
+  vanDiv: "mt-6 md:max-w-[700px] md:mx-auto",
   vanLink: "underline",
   vanType: "",
   vanImg: "rounded-md mb-10",

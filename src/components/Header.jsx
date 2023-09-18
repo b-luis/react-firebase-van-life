@@ -22,7 +22,7 @@ const Header = () => {
         <NavLink to="/vans" className={style.navLinks}>
           Vans
         </NavLink>
-      </nav>
+      </nav> 
     </header>
   );
 };
