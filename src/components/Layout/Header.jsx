@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import classNames from "classnames";
 
 const style = {
   header:
@@ -7,6 +8,7 @@ const style = {
   headerLogo: "font-bold text-3xl",
   navbar: "flex items-center",
   navLinks: "px-2 text-default font-medium hover:underline hover:text-active",
+  active: "text-[#e0881c] px-2 font-semibold underline underline-offset-4",
 };
 
 const Header = () => {
@@ -16,13 +18,28 @@ const Header = () => {
         #VANLIFE
       </NavLink>
       <nav className={style.navbar}>
-        <NavLink to="/host" className={style.navLinks}>
+        <NavLink
+          to="/host"
+          className={({ isActive }) =>
+            isActive ? style.active : style.navLinks
+          }
+        >
           Host
         </NavLink>
-        <NavLink to="/about" className={style.navLinks}>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? style.active : style.navLinks
+          }
+        >
           About
         </NavLink>
-        <NavLink to="/vans" className={style.navLinks}>
+        <NavLink
+          to="/vans"
+          className={({ isActive }) =>
+            isActive ? style.active : style.navLinks
+          }
+        >
           Vans
         </NavLink>
       </nav>

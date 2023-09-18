@@ -1,16 +1,34 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
-import classNames from "classnames";
-
-const navStyles = "flex";
+import { Outlet, NavLink } from "react-router-dom";
 
 const HostLayout = () => {
+  
+  const activeclassNames = {
+    fontWeight: "600",
+    textDecoration: "underline",
+    color: "#161616",
+  };
+
   return (
     <>
-      <nav className={`${navStyles} host-nav`}>
-        <Link to="/host">Dashboard</Link>
-        <Link to="/host/income">Income</Link>
-        <Link to="/host/reviews">Reviews</Link>
+      <nav className="host-nav">
+        <NavLink
+          style={({ isActive }) => (isActive ? activeclassNames : null)}
+          to="host"
+        >
+          Dashboard
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeclassNames : null)}
+          to="income"
+        >
+          Income
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeclassNames : null)}
+          to="reviews"
+        >
+          Reviews
+        </NavLink>
       </nav>
       <Outlet />
     </>
