@@ -1,10 +1,11 @@
 import { Outlet, NavLink } from "react-router-dom";
 
 const HostLayout = () => {
-  
+  // css properties must be in camelCase
   const activeclassNames = {
     fontWeight: "600",
     textDecoration: "underline",
+    textUnderlineOffset: "4px",
     color: "#161616",
   };
 
@@ -22,6 +23,12 @@ const HostLayout = () => {
           to="income"
         >
           Income
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => (isActive ? activeclassNames : null)}
+          to="vans"
+        >
+          Vans
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeclassNames : null)}

@@ -1,11 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import classNames from "classnames";
 
 const style = {
   header:
     "bg-[#FFF7ED] flex px-7 py-4 justify-between sticky top-0 w-full backdrop-blur bg-[#FFF7ED]/70",
-  headerLogo: "font-bold text-3xl",
+  headerLogo: "font-bold text-3xl mr-3",
   navbar: "flex items-center",
   navLinks: "px-2 text-default font-medium hover:underline hover:text-active",
   active: "text-[#e0881c] px-2 font-semibold underline underline-offset-4",

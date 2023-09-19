@@ -27,7 +27,7 @@ const Van = () => {
       <h2 className={styles.vanTitle}>Explore our vans options</h2>
       <div className={styles.vanDiv}>
         {vanData.map((data) => (
-          <VanItem {...data} />
+          <VanItem key={data.id} {...data} />
         ))}
       </div>
     </section>

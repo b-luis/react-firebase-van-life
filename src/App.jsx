@@ -8,6 +8,8 @@ import {
   Dashboard,
   Income,
   Reviews,
+  HostVans,
+  HostVanDetail,
 } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import "./miragejs/server";
@@ -26,6 +28,8 @@ const App = () => {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVanDetail />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Route>

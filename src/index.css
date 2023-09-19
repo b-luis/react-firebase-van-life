@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -77,15 +77,28 @@ i[class*="van-type-"] {
   padding: 7px 14px;
 }
 
+.host-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .host-nav a {
   text-decoration: none;
   color: #4d4d4d;
   font-weight: 500;
-  padding: 5px 20px;
 }
 
 .host-nav a:hover {
   color: #161616;
   text-decoration: underline;
+  text-underline-offset: 4px;
   font-weight: 600;
+}
+
+@media (width >= 640px) {
+  .host-nav {
+    max-width: 50%;
+    margin: 0 auto;
+  }
 }
