@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import ListedVan from "../../components/Vans/ListedVan";
+import ListedVan from "../../../components/Vans/ListedVan";
 
 const styles = {
   hostVanDiv: "px-5 py-8 flex flex-col",
@@ -20,14 +20,14 @@ const HostVans = () => {
     }, []);
   }
 
-  console.log(hostVan.map((item) => item));
-
   return (
     <div className={styles.hostVanDiv}>
       <h2 className={styles.hostVanTitle}>Your listed vans</h2>
-      {hostVan.map((van) => (
-        <ListedVan key={van.id} {...van} />
-      ))}
+      <section className={styles.hostVanSection}>
+        {hostVan.map((van) => (
+          <ListedVan key={van.id} {...van} />
+        ))}
+      </section>
     </div>
   );
 };

@@ -8,7 +8,9 @@ const Layout = () => {
     <>
       {/** parang children  */}
       <Header />
+
       <Outlet />
+
       <Footer />
     </>
   );

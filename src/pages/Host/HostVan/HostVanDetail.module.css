@@ -1,0 +1,78 @@
+/* typography */
+span {
+  font-weight: 500;
+}
+
+.van_name {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* layout */
+
+.van_wrapper {
+  margin-top: 20px;
+  padding: 10px 25px;
+}
+
+.section_wrapper {
+  padding: 10px 25px;
+}
+
+.van_details_container {
+  background: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* details */
+.van_image {
+  max-width: 135px;
+  border-radius: 5px;
+}
+
+.van_info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.vantype {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffead0;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100px;
+}
+
+.simple:hover,
+.simple.selected {
+  background-color: #e17654;
+}
+
+.rugged:hover,
+.rugged.selected {
+  background-color: #115e59;
+}
+
+.luxury:hover,
+.luxury.selected {
+  background-color: #161616;
+}
+
+@media (width >= 1024px) {
+  .section_wrapper {
+    max-width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}

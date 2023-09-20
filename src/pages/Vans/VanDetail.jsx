@@ -4,7 +4,7 @@ import { useParams, NavLink } from "react-router-dom";
 const styles = {
   vanDetailContainer: "px-6 py-[45px] flex flex-col ",
   vanDiv: "mt-6 md:max-w-[700px] md:mx-auto",
-  vanLink: "underline",
+  vanLink: "hover:underline",
   vanType: "",
   vanImg: "rounded-md mb-10",
   vanName: "font-semibold text-2xl py-4 lg:text-3xl",
@@ -17,6 +17,7 @@ const VanDetail = () => {
   const params = useParams();
   const [van, setVan] = useState(null);
 
+  // regular/old way fetching of promises
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
       .then((res) => res.json())
@@ -26,7 +27,7 @@ const VanDetail = () => {
   return (
     <div className={styles.vanDetailContainer}>
       <NavLink to="/vans" className={styles.vanLink}>
-        Back to all vans
+        &larr; Back to all vans
       </NavLink>
       {van ? (
         <div className={styles.vanDiv}>

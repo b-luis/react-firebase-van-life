@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const styles = {
-  listedVanDiv: "flex bg-white rounded-md p-5 mt-4",
+  listedVanDiv: "flex bg-white rounded-md p-5 my-4",
   listedVanImg: "max-w-[80px] rounded-sm",
   listedVanDetails: "flex flex-col justify-center px-5",
   listedVanPrice: "text-sm",
@@ -12,7 +12,7 @@ const styles = {
 const ListedVan = ({ id, imageUrl, name, price }) => {
   return (
     <>
-      <Link to={`/host/vans/${id}`}>
+      <NavLink to={`/host/vans/${id}`}>
         <div className={styles.listedVanDiv}>
           <img className={styles.listedVanImg} src={imageUrl} alt="van image" />
           <div className={styles.listedVanDetails}>
@@ -20,7 +20,7 @@ const ListedVan = ({ id, imageUrl, name, price }) => {
             <p className={styles.listedVanPrice}>${price}/day</p>
           </div>
         </div>
-      </Link>
+      </NavLink>
     </>
   );
 };
