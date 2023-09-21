@@ -6,7 +6,7 @@ const HostLayout = () => {
     fontWeight: "600",
     textDecoration: "underline",
     textUnderlineOffset: "4px",
-    color: "#161616",
+    color: "#804a1c",
   };
 
   return (
@@ -16,6 +16,7 @@ const HostLayout = () => {
           <NavLink
             style={({ isActive }) => (isActive ? activeclassNames : null)}
             to="."
+            end
           >
             Dashboard
           </NavLink>

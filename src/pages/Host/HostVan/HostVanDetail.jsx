@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, Outlet } from "react-router-dom";
 import styles from "./HostVanDetail.module.css";
 
 const HostVanDetail = () => {
@@ -11,6 +11,13 @@ const HostVanDetail = () => {
       .then((res) => res.json())
       .then((data) => setHostVan(data.vans));
   }, [params.id]);
+
+  const activeclassNames = {
+    fontWeight: "600",
+    textDecoration: "underline",
+    textUnderlineOffset: "4px",
+    color: "#804a1c",
+  };
 
   return (
     <>
@@ -33,10 +40,32 @@ const HostVanDetail = () => {
                 </p>
               </div>
             </article>
+            <nav className={styles.van_navigation}>
+              <NavLink
+                to="."
+                style={({ isActive }) => (isActive ? activeclassNames : null)}
+                end
+              >
+                Details
+              </NavLink>
+              <NavLink
+                to="pricing"
+                style={({ isActive }) => (isActive ? activeclassNames : null)}
+              >
+                Pricing
+              </NavLink>
+              <NavLink
+                to="photos"
+                style={({ isActive }) => (isActive ? activeclassNames : null)}
+              >
+                Photos
+              </NavLink>
+            </nav>
+            <Outlet />
           </div>
         </section>
       ) : (
-        <h2>Loading...</h2>
+        <h2 className="fetch-data detail">Fetching data...</h2>
       )}
     </>
   );

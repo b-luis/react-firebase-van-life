@@ -8,3 +8,6 @@ export { default as Income } from "./Host/Income";
 export { default as Reviews } from "./Host/Reviews";
 export { default as HostVans } from "./Host/HostVan/HostVans";
 export { default as HostVanDetail } from "./Host/HostVan/HostVanDetail";
+export { default as HostVanPhotos } from "./Host/HostVan/HostVanPhotos";
+export { default as HostVanPricing } from "./Host/HostVan/HostVanPricing";
+export { default as HostVanInfo } from "./Host/HostVan/HostVanInfo";

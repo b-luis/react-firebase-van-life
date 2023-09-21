@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 
 const style = {
   header:
-    "bg-[#FFF7ED] flex px-7 py-4 justify-between sticky top-0 w-full backdrop-blur bg-[#FFF7ED]/70",
+    "bg-[#FFF7ED] flex px-7 py-4 justify-between sticky top-0 w-full backdrop-blur bg-[#FFF7ED]/70 text-[#804a1c]",
   headerLogo: "font-bold text-3xl mr-3",
   navbar: "flex items-center",
-  navLinks: "px-2 text-default font-medium hover:underline hover:text-active",
-  active: "text-[#e0881c] px-2 font-semibold underline underline-offset-4",
+  navLinks:
+    "px-2 text-default font-medium hover:underline hover:text-active hover:text-[#804a1c] hover:underline-offset-4",
+  active: "text-[#804a1c] px-2 font-semibold underline underline-offset-4",
 };
 
 const Header = () => {
