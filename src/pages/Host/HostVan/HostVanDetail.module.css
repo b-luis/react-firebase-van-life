@@ -11,8 +11,7 @@ span {
 /* layout */
 
 .van_wrapper {
-  margin-top: 20px;
-  padding: 10px 25px;
+  padding: 5px 20px 0 20px;
 }
 
 .section_wrapper {

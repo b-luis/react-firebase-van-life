@@ -1,10 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import useFetchDetails from "../../../hooks/useFetchDetails";
+import { useOutletContext } from "react-router-dom";
 
 const HostVanPricing = () => {
-  const { id } = useParams();
-  const { vanData } = useFetchDetails(`/api/host/vans/${id}`, id);
+  const { vanData } = useOutletContext();
   return (
     <>
       {vanData ? (

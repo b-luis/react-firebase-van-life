@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 import useFetchDetails from "../../../hooks/useFetchDetails";
 
 const styles = {
@@ -8,8 +8,7 @@ const styles = {
 };
 
 const HostVanPhotos = () => {
-  const { id } = useParams();
-  const { vanData } = useFetchDetails(`/api/host/vans/${id}`, id);
+  const { vanData } = useOutletContext();
   return (
     <>
       {vanData ? (
