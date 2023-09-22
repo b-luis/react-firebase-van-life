@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 const styles = {
-  itemContainer: "xs:max-w-[45%] lg:max-w-[30%] mt-10",
+  itemContainer: "xs:max-w-[45%] lg:max-w-[30%]",
   img: "rounded-md",
   itemDiv: "flex justify-between",
-  text: "font-semibold py-3 md:text-xl lg:text-2xl",
+  itemDetails: "",
+  text: "font-semibold md:text-xl lg:text-2xl py-2",
   small: "block text-xs",
 };
 
@@ -15,7 +16,7 @@ const VanItem = ({ id, name, imageUrl, type, price }) => {
       <NavLink to={`/vans/${id}`}>
         <img className={styles.img} src={imageUrl} />
         <div className={styles.itemDiv}>
-          <div className="">
+          <div className={styles.itemDetails}>
             <h4 className={styles.text}>{name}</h4>
             <i className={`vantype ${type} selected`}>{upperCaseType}</i>
           </div>

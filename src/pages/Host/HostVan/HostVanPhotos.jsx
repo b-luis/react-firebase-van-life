@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams, useOutletContext } from "react-router-dom";
-import useFetchDetails from "../../../hooks/useFetchDetails";
 
 const styles = {
   imgDiv: "flex  flex-wrap justify-between",
@@ -13,9 +12,6 @@ const HostVanPhotos = () => {
     <>
       {vanData ? (
         <div className={styles.imgDiv}>
-          <img className={styles.img} src={vanData.imageUrl} alt="van photo" />
-          <img className={styles.img} src={vanData.imageUrl} alt="van photo" />
-          <img className={styles.img} src={vanData.imageUrl} alt="van photo" />
           <img className={styles.img} src={vanData.imageUrl} alt="van photo" />
         </div>
       ) : (
