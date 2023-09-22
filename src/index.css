@@ -163,6 +163,16 @@ i[class*="van-type-"] {
   text-decoration: underline;
 }
 
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+}
+
 @media (width >= 640px) {
   .host-nav {
     max-width: 50%;
