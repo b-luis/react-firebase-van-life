@@ -13,7 +13,10 @@ const VanItem = ({ id, name, imageUrl, type, price, searchParams }) => {
   const upperCaseType = type[0].toUpperCase() + type.slice(1);
   return (
     <div key={id} className={styles.itemContainer}>
-      <Link to={id} state={{ search: searchParams.toString() }}>
+      <Link
+        to={id}
+        state={{ search: `?${searchParams.toString()}`, type: type }}
+      >
         <img className={styles.img} src={imageUrl} />
         <div className={styles.itemDiv}>
           <div className={styles.itemDetails}>

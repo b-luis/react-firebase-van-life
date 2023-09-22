@@ -18,8 +18,11 @@ const VanDetail = () => {
   const location = useLocation();
   const [van, setVan] = useState(null);
 
-  console.log(location);
-  console.log(location.state);
+  const { search, type } = location.state;
+
+  // const backBtnText =
+  //   location.state?.search !== "?" ? location.state?.search.slice(6) : "all";
+  const backBtn = search.includes("type") ? type : "all";
 
   // regular/old way fetching of promises
   useEffect(() => {
@@ -28,24 +31,15 @@ const VanDetail = () => {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  /**
-   * Challenge: modify the Link `to` prop below to send the user
-   * back to the previous page with the searchParams included, if
-   * they exist. (Remember we may not have anything in that state
-   * if there were no filters applied before coming to this
-   * van detail page, so make sure to "code defensively" to handle
-   * that case.)
-   */
-
   return (
     <div className={styles.vanDetailContainer}>
       {/* back to all vans goes here */}
       <Link
-        to={`..?${location.state?.search}`}
+        to={`..${location.state?.search}`}
         relative="path"
         className={styles.vanLink}
       >
-        &larr; <span>Back to all vans</span>
+        &larr; <span>{`Back to  ${backBtn} vans`}</span>
       </Link>
       {van ? (
         <div className={styles.vanDiv}>
