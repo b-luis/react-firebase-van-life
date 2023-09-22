@@ -70,7 +70,7 @@ const Van = () => {
       </nav>
       <div className={styles.vanDiv}>
         {displayedVans.map((data) => (
-          <VanItem key={data.id} {...data} />
+          <VanItem key={data.id} searchParams={searchParams} {...data} />
         ))}
       </div>
     </section>

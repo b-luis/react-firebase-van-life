@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 
 const styles = {
   vanDetailContainer: "px-6 py-[45px] flex flex-col ",
@@ -15,7 +15,11 @@ const styles = {
 
 const VanDetail = () => {
   const params = useParams();
+  const location = useLocation();
   const [van, setVan] = useState(null);
+
+  console.log(location);
+  console.log(location.state);
 
   // regular/old way fetching of promises
   useEffect(() => {
@@ -24,11 +28,25 @@ const VanDetail = () => {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
+  /**
+   * Challenge: modify the Link `to` prop below to send the user
+   * back to the previous page with the searchParams included, if
+   * they exist. (Remember we may not have anything in that state
+   * if there were no filters applied before coming to this
+   * van detail page, so make sure to "code defensively" to handle
+   * that case.)
+   */
+
   return (
     <div className={styles.vanDetailContainer}>
-      <NavLink to="/vans" className={styles.vanLink}>
-        &larr; Back to all vans
-      </NavLink>
+      {/* back to all vans goes here */}
+      <Link
+        to={`..?${location.state?.search}`}
+        relative="path"
+        className={styles.vanLink}
+      >
+        &larr; <span>Back to all vans</span>
+      </Link>
       {van ? (
         <div className={styles.vanDiv}>
           <img className={styles.vanImg} src={van.imageUrl} alt="" />

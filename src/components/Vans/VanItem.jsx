@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const styles = {
   itemContainer: "xs:max-w-[45%] lg:max-w-[30%]",
@@ -9,11 +9,11 @@ const styles = {
   small: "block text-xs",
 };
 
-const VanItem = ({ id, name, imageUrl, type, price }) => {
+const VanItem = ({ id, name, imageUrl, type, price, searchParams }) => {
   const upperCaseType = type[0].toUpperCase() + type.slice(1);
   return (
     <div key={id} className={styles.itemContainer}>
-      <NavLink to={id}>
+      <Link to={id} state={{ search: searchParams.toString() }}>
         <img className={styles.img} src={imageUrl} />
         <div className={styles.itemDiv}>
           <div className={styles.itemDetails}>
@@ -25,7 +25,7 @@ const VanItem = ({ id, name, imageUrl, type, price }) => {
             <small className={styles.small}>/day</small>
           </h4>
         </div>
-      </NavLink>
+      </Link>
     </div>
   );
 };

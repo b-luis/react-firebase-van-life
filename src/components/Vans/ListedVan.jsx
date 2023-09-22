@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const styles = {
   listedVanDiv: "flex bg-white rounded-md p-5 my-4",
@@ -13,7 +13,8 @@ const styles = {
 const ListedVan = ({ id, imageUrl, name, price }) => {
   return (
     <div className={styles.listedVanLink}>
-      <NavLink to={id}>
+      {/** passing th eucrrent typefilter to the next route */}
+      <Link to={id}>
         <div className={styles.listedVanDiv}>
           <img className={styles.listedVanImg} src={imageUrl} alt="van image" />
           <div className={styles.listedVanDetails}>
@@ -21,7 +22,7 @@ const ListedVan = ({ id, imageUrl, name, price }) => {
             <p className={styles.listedVanPrice}>${price}/day</p>
           </div>
         </div>
-      </NavLink>
+      </Link>
     </div>
   );
 };
