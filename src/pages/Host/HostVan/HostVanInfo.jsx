@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams, useOutletContext } from "react-router-dom";
 
 const styles = {
-  vanDetails: "py-1 lg:text-xl",
+  vanDetails: "py-1 lg:text-lg",
   vanSpan: "font-semibold",
 };
 

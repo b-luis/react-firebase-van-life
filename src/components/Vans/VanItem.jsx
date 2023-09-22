@@ -13,7 +13,7 @@ const VanItem = ({ id, name, imageUrl, type, price }) => {
   const upperCaseType = type[0].toUpperCase() + type.slice(1);
   return (
     <div key={id} className={styles.itemContainer}>
-      <NavLink to={`/vans/${id}`}>
+      <NavLink to={id}>
         <img className={styles.img} src={imageUrl} />
         <div className={styles.itemDiv}>
           <div className={styles.itemDetails}>

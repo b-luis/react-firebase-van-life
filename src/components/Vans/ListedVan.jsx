@@ -3,16 +3,17 @@ import { NavLink } from "react-router-dom";
 
 const styles = {
   listedVanDiv: "flex bg-white rounded-md p-5 my-4",
-  listedVanImg: "max-w-[80px] rounded-sm",
+  listedVanImg: "max-w-[80px] lg:max-w-[130px] rounded-sm",
   listedVanDetails: "flex flex-col justify-center px-5",
-  listedVanPrice: "text-sm",
-  listedVanName: "font-semibold",
+  listedVanPrice: "text-sm lg:text-lg",
+  listedVanName: "font-semibold lg:text-xl",
+  listedVanLink: "mx-auto lg:max-w-[500px] ",
 };
 
 const ListedVan = ({ id, imageUrl, name, price }) => {
   return (
-    <>
-      <NavLink to={`/host/vans/${id}`}>
+    <div className={styles.listedVanLink}>
+      <NavLink to={id}>
         <div className={styles.listedVanDiv}>
           <img className={styles.listedVanImg} src={imageUrl} alt="van image" />
           <div className={styles.listedVanDetails}>
@@ -21,7 +22,7 @@ const ListedVan = ({ id, imageUrl, name, price }) => {
           </div>
         </div>
       </NavLink>
-    </>
+    </div>
   );
 };
 

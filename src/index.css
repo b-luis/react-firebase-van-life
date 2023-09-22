@@ -80,37 +80,26 @@ i[class*="van-type-"] {
   padding: 7px 14px;
 }
 
-.host-nav {
+.navlink-wrapper {
+  /* background-color: #dddddda1; */
+  background-color: #ffefd8;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  /* padding: 0.3rem 0; */
 }
 
-.host-nav a {
+.navlink-wrapper a {
+  padding: 2px 20px;
   text-decoration: none;
   color: #ab5500;
   font-weight: 500;
 }
 
-.host-nav a:hover {
+.navlink-wrapper a:hover {
   color: #804a1c;
   text-decoration: underline;
   text-underline-offset: 4px;
   font-weight: 600;
-}
-
-.navlink-wrapper {
-  /* background-color: #dddddda1; */
-  /* background-color: #fbead3; */
-  background: rgb(244, 208, 160);
-  background: radial-gradient(
-    circle,
-    rgba(244, 208, 160, 1) 0%,
-    rgba(246, 205, 150, 1) 54%,
-    rgba(251, 234, 211, 1) 100%
-  );
-
-  padding: 0.5rem;
 }
 
 .van-type {
