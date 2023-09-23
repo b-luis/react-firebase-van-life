@@ -1,0 +1,13 @@
+.nav_wrapper {
+  width: 50%;
+  height: 100vh;
+  background-color: aquamarine;
+  position: relative;
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+}
