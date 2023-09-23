@@ -1,7 +1,9 @@
 import React from "react";
 import VanItem from "../../components/Vans/VanItem";
-import { useEffect, useState, useRef } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import Loading from "../../components/Layout/Loading";
+import { useEffect, useState } from "react";
+import { useSearchParams, Link, useLoaderData } from "react-router-dom";
+import { getVans } from "../../api";
 
 const styles = {
   vanSection: "px-6 py-[50px]",
@@ -10,26 +12,47 @@ const styles = {
   vanNav: "flex gap-2 py-5",
 };
 
+export const loader = () => {
+  return getVans();
+};
+
 const Van = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [vanData, setVanData] = useState([]);
-  const firstRender = useRef(true);
 
+  // const [vanData, setVanData] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
   const typeFilter = searchParams.get("type");
+  const vanData = useLoaderData();
 
-  if (firstRender) {
-    useEffect(() => {
-      {
-        fetch("api/vans")
-          .then((res) => res.json())
-          .then((data) => setVanData(data.vans));
-      }
-    }, []);
-  }
+  // useEffect(() => {
+  //   const loadVans = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const data = await getVans();
+  //       setVanData(data);
+  //     } catch (err) {
+  //       setError(err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   loadVans();
+  // }, []);
 
   const displayedVans = typeFilter
     ? vanData.filter((van) => van.type === typeFilter)
     : vanData;
+
+  // if (loading) {
+  //   return <Loading />;
+  // }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
 
   return (
     <section className={styles.vanSection}>
