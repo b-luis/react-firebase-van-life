@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
+import { getVan } from "../../api";
 
 const styles = {
   vanDetailContainer: "px-6 py-[45px] flex flex-col ",
@@ -14,7 +15,7 @@ const styles = {
 };
 
 const VanDetail = () => {
-  const params = useParams();
+  const { id } = useParams();
   const location = useLocation();
   const [van, setVan] = useState(null);
 
@@ -25,11 +26,25 @@ const VanDetail = () => {
   const backBtn = search.includes("type") ? type : "all";
 
   // regular/old way fetching of promises
+  // useEffect(() => {
+  //   fetch(`/api/vans/${params.id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setVan(data.vans));
+  // }, [params.id]);
+
   useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
+    const loadVans = async () => {
+      try {
+        const data = await getVan(id);
+        setVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadVans();
+  }, [id]);
 
   return (
     <div className={styles.vanDetailContainer}>

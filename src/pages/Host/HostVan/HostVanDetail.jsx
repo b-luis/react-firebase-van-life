@@ -1,16 +1,29 @@
 import { useEffect, useState } from "react";
 import { NavLink, useParams, Outlet } from "react-router-dom";
 import styles from "./HostVanDetail.module.css";
+import { getVan } from "../../../api";
 
 const HostVanDetail = () => {
-  const params = useParams();
   const [hostVan, setHostVan] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setHostVan(data.vans));
-  }, [params.id]);
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getVan(id);
+        setHostVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadVans();
+  }, [id]);
 
   const activeclassNames = {
     fontWeight: "600",
