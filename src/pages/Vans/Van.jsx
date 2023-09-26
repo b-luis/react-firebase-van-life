@@ -6,7 +6,7 @@ import { useSearchParams, Link, useLoaderData } from "react-router-dom";
 import { getVans } from "../../api";
 
 const styles = {
-  vanSection: "px-6 py-[50px]",
+  vanSection: "px-6 py-[50px] ",
   vanTitle: "font-semibold text-xl flex-row lg:text-2xl",
   vanDiv: "flex gap-10 flex-wrap justify-center",
   vanNav: "flex gap-2 py-5",
@@ -22,7 +22,7 @@ const Van = () => {
   // const [vanData, setVanData] = useState([]);
   // const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
+
   const typeFilter = searchParams.get("type");
   const vanData = useLoaderData();
 
@@ -91,6 +91,7 @@ const Van = () => {
           </button>
         ) : null}
       </nav>
+
       <div className={styles.vanDiv}>
         {displayedVans.map((data) => (
           <VanItem key={data.id} searchParams={searchParams} {...data} />

@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-postcss.config.json
+postcss.config.js
 package-lock.json
 package.json
 .eslintrc.cjs

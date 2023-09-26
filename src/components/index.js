@@ -6,3 +6,4 @@ export { default as VanItem } from "./Vans/VanItem";
 export { default as ListedVan } from "./Vans/ListedVan";
 export { default as HostLayout } from "./Layout/HostLayout";
 export { default as Sidebar } from "./Layout/Sidebar";
+export { default as AuthRequired } from "./AuthRequired";

@@ -1,4 +1,4 @@
-import { Layout, HostLayout } from "./components";
+import { Layout, HostLayout, AuthRequired } from "./components";
 import {
   Home,
   About,
@@ -13,6 +13,8 @@ import {
   HostVanInfo,
   HostVanPricing,
   HostVanPhotos,
+  VanError,
+  Login,
 } from "./pages";
 import {
   Route,
@@ -25,21 +27,24 @@ import { loader as vansLoader } from "./pages/Vans/Van";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    /* errorElement will catch any error in the components. */
+    <Route path="/" element={<Layout />} errorElement={<VanError />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="login" element={<Login />} />
       <Route path="vans" element={<Van />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
-
-      <Route path="host" element={<HostLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="income" element={<Income />} />
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} />
-        <Route path="vans/:id" element={<HostVanDetail />}>
-          <Route index element={<HostVanInfo />} />
-          <Route path="pricing" element={<HostVanPricing />} />
-          <Route path="photos" element={<HostVanPhotos />} />
+      <Route element={<AuthRequired />}>
+        <Route path="host" element={<HostLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="income" element={<Income />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="vans" element={<HostVans />} />
+          <Route path="vans/:id" element={<HostVanDetail />}>
+            <Route index element={<HostVanInfo />} />
+            <Route path="pricing" element={<HostVanPricing />} />
+            <Route path="photos" element={<HostVanPhotos />} />
+          </Route>
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />

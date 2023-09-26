@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const styles = {
-  itemContainer: "xs:max-w-[45%] lg:max-w-[30%]",
+  itemContainer: "xs:max-w-[45%] lg:max-w-[22%]",
   img: "rounded-md",
   itemDiv: "flex justify-between",
   itemDetails: "",

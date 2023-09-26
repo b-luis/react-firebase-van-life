@@ -1,3 +1,20 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore/lite";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB-72nTJKNUlOMQBdl87lYFrkFpwik4_m0",
+  authDomain: "vanlife-e8f96.firebaseapp.com",
+  projectId: "vanlife-e8f96",
+  storageBucket: "vanlife-e8f96.appspot.com",
+  messagingSenderId: "571312664628",
+  appId: "1:571312664628:web:ff95f2e0b08ad607021a61",
+  measurementId: "G-CR0MSY7Q4T",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 // A function whose only purpose is to delay execution
 // for the specified # of milliseconds when used w/ `await`
 // e.g. inside an async function:

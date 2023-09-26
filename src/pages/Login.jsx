@@ -9,6 +9,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
   const location = useLocation();
@@ -90,6 +91,14 @@ const Login = () => {
             {status === "submitting" ? "Logging in..." : "Log in"}
           </button>
         </form>
+        {/*
+           If the user decides to click on a protected route, like "/host", and they are not logged in,
+          a warning message will appear at the bottom of the login page. This message requests the user
+          to log in first before gaining access to the protected "host" page.
+
+          This came from the <Navigate/> component in the AuthRequired where we pass something
+          to it like props, in that way we can pass information from component to component.
+        */}
         {location.state?.message && (
           <p className="login-first fade-in ">
             <AiOutlineWarning className="inline text-lg mb-[4px] mx-1" />

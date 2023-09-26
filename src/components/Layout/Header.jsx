@@ -8,7 +8,7 @@ import Sidebar from "./Sidebar";
 
 const style = {
   header:
-    "bg-[#FFF7ED] flex px-7 py-4 justify-between sticky top-0 w-full backdrop-blur bg-[#FFF7ED]/70 text-[#804a1c] ",
+    "bg-[#FFF7ED] flex px-7 py-4 justify-between sticky top-0 w-full backdrop-blur bg-[#FFF7ED]/70 text-[#804a1c] shadow shadow-sm",
   headerLogo: "font-black text-3xl mr-3",
   navbar: "flex items-center",
   navLinks:
@@ -19,8 +19,9 @@ const style = {
 
 const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  console.log(hamburgerOpen);
-
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+  }
   return (
     <header className={style.header}>
       <NavLink to="/" className={style.headerLogo}>
@@ -67,6 +68,7 @@ const Header = () => {
             <BiSolidUserBadge className={style.navProfile} />
           </NavLink>
         </section>
+        <button onClick={fakeLogOut}>X</button>
       </nav>
     </header>
   );
