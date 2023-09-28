@@ -7,7 +7,8 @@ import {
   getDoc,
   getDocs,
   query,
-} from "firebase/firestore/lite";
+  where,
+} from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -22,8 +23,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// For Database
 const db = getFirestore(app);
-const auth = getAuth(app);
+// For Authentication
+export const auth = getAuth(app);
 
 const vansCollectionRef = collection(db, "vans");
 

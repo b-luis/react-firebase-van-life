@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import van from "../assets/images/background/login.jpg";
 import { AiOutlineWarning } from "react-icons/ai";
-import { loginUser } from "../api";
+import { loginUser, auth } from "../api";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
+
+  console.log(loginFormData);
 
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
@@ -19,16 +22,16 @@ const Login = () => {
   // to redirect the user back to their original destination after login
   let from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = (e) => {
+  /* const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("submitting");
 
     loginUser(loginFormData)
       .then((data) => {
         setError(null);
-        // Set the 'loggedin' flag in local storage
+        //* Set the 'loggedin' flag in local storage
         localStorage.setItem("loggedin", true);
-        // Redirect the user back to the previous page or /host
+        //* Redirect the user back to the previous page or /host
         navigate(from, { replace: true });
       })
       .catch((err) => {
@@ -38,16 +41,15 @@ const Login = () => {
         setStatus("idle");
       });
 
-    /**
-     * NOTE:
-     * By wrapping setStatus("idle") in a function inside the finally block,
-     * you ensure that it only gets executed after the asynchronous operations
-     * in the try block (and any potential catch block) have completed.
-     *
-     * This way, the status state is updated appropriately based on the
-     * actual outcome of the login operation.
-     */
-  };
+     //* NOTE:
+     //* By wrapping setStatus("idle") in a function inside the finally block,
+     //* you ensure that it only gets executed after the asynchronous operations
+     //* in the try block (and any potential catch block) have completed.
+     //*
+     //* This way, the status state is updated appropriately based on the
+     //* actual outcome of the login operation.
+     
+  }; */
 
   /**
    * NOTE:
@@ -64,6 +66,14 @@ const Login = () => {
     }));
   };
 
+  const signIn = async () => {
+    await createUserWithEmailAndPassword(
+      auth,
+      loginFormData.email,
+      loginFormData.password
+    );
+  };
+
   return (
     <div className="login-section">
       <img className="login-image" src={van} alt="" />
@@ -72,7 +82,7 @@ const Login = () => {
           <h3 className="login-first fade-in">{error?.message}</h3>
         )}
         <h1>Sign in to your account</h1>
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={signIn} className="login-form">
           <input
             name="email"
             type="email"
@@ -105,6 +115,15 @@ const Login = () => {
             {location.state.message}
           </p>
         )}
+        <p className="text-slate-500 py-5">
+          Don't have an account?
+          <span>
+            {" "}
+            <Link to="/signup" className="text-blue-600 hover:underline">
+              Sign Up
+            </Link>
+          </span>
+        </p>
       </div>
     </div>
   );

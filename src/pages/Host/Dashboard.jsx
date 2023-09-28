@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
 import { getHostVans } from "../../api";
-
 export default function Dashboard() {
   const [vans, setVans] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
-
   React.useEffect(() => {
     setLoading(true);
     getHostVans()
@@ -24,13 +22,12 @@ export default function Dashboard() {
           <h3>{van.name}</h3>
           <p>${van.price}/day</p>
         </div>
-
         <Link to={`vans/${van.id}`}>View</Link>
       </div>
     ));
 
     return (
-      <div className="">
+      <div className="host-vans-list">
         <section>{hostVansEls}</section>
       </div>
     );
@@ -76,9 +73,6 @@ export default function Dashboard() {
         ) : (
           <>{renderVanElements(vans)}</>
         )}
-        {/*<React.Suspense fallback={<h3>Loading...</h3>}>
-                    <Await resolve={loaderData.vans}>{renderVanElements}</Await>
-                </React.Suspense>*/}
       </section>
     </>
   );

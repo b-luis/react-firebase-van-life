@@ -68,7 +68,6 @@ const Header = () => {
             <BiSolidUserBadge className={style.navProfile} />
           </NavLink>
         </section>
-        <button onClick={fakeLogOut}>X</button>
       </nav>
     </header>
   );

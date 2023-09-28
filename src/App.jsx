@@ -15,6 +15,7 @@ import {
   HostVanPhotos,
   VanError,
   Login,
+  SignUp,
 } from "./pages";
 import {
   Route,
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="login" element={<Login />} />
+      <Route path="signup" element={<SignUp />} />
       <Route path="vans" element={<Van />} loader={vansLoader} />
       <Route path="vans/:id" element={<VanDetail />} />
       <Route element={<AuthRequired />}>
